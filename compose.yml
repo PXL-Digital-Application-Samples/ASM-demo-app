@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    container_name: asm-crud-api
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/app/src:ro
+      - ./Makefile:/app/Makefile:ro
+      - ./test_api.sh:/app/test_api.sh:ro
+    privileged: true  # Needed for shared memory operations
+    stdin_open: true
+    tty: true

@@ -1,0 +1,53 @@
+# Object files
+*.o
+*.obj
+
+# Executables
+cgi-bin/
+!cgi-bin/.gitkeep
+
+# Docker volumes
+.docker/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Log files
+*.log
+/logs/
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+/temp/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+
+# Python cache (for test scripts)
+__pycache__/
+*.pyc
+
+# Build artifacts
+/build/
+/dist/
+
+# Shared memory dumps (for debugging)
+*.shm
+*.dump
+
+# Test output
+test-results/
+coverage/
