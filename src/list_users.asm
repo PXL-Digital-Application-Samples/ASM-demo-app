@@ -29,14 +29,19 @@ _start:
     
     ; === Connect to shared memory ===
     ; Get shared memory ID using our predefined key
-    SYSCALL SHMGET, SHM_KEY, SHM_SIZE, 0666o
+    mov rax, SYS_SHMGET
+    mov rdi, SHM_KEY
+    mov rsi, SHM_SIZE
+    mov rdx, 0666o
+    syscall
     
     test rax, rax
     js .error_exit          ; Jump if shmget failed (negative return)
     mov r12, rax            ; r12 = shared memory ID
     
     ; Attach shared memory to our address space
-    SYSCALL SHMAT, r12      ; Attach with default params (0,0)
+    mov rax, SYS_SHMAT
+    mov rdi, r12
     xor rsi, rsi
     xor rdx, rdx
     syscall
