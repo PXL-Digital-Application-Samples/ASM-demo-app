@@ -30,7 +30,7 @@ $(BINDIR):
 	mkdir -p $(BINDIR)
 
 # Pattern rule for assembly to object
-$(BINDIR)/%.o: $(SRCDIR)/%.asm $(INCLUDE)
+$(BINDIR)/%.o: $(SRCDIR)/%.asm $(INCLUDES)
 	$(AS) $(ASFLAGS) -I$(SRCDIR) -o $@ $<
 
 # Pattern rule for object to executable
